@@ -18,8 +18,7 @@ public class OrderController {
 
     @PostMapping("/create")
     public Mono<PurchaseOrder> createOrder(@RequestBody Mono<OrderRequestDTO> mono){
-        return mono
-                .flatMap(this.service::createOrder);
+        return mono.flatMap(this.service::createOrder);
     }
 
     @GetMapping("/all")
